@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>17 - Videos Parte I</title>
+	<style type="text/css">
+		#video{
+			width: 400px;
+			margin: 20px auto; /*para centrar*/
+			background-color: #F93;
+			padding: 5px;
+			border: 3px solid #F00;
+			/*Para asegurarnos que se ve bien en todos los navegadores*/
+			-moz- border-radius: 10px;
+			-webkit- border-radius: 10px;
+			-o- border-radius: 10px;
+			-ms- border-radius: 10px;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- La etiqueta de video soporta mp4, ogg y tiene varios atributos, los más importantes son: Src(ruta), Controls(especificar si el video va a tener botones(play, pause, etc)), Autoplay(si el video comienza cuando cargue la pagina), Loop(Repetir el video indefinidamente), Poster(imagen como portada del video), preload(permite especificar caracteristicas del video(duracion, fotograma)) 
+
+		SI se quiere agregar autoplay y controls, debe ir primero controls de lo contrario las opciones aparecerán después de quue se reproduzca el video-->
+	<section id="video">
+		<video id="mivideo" controls width="400" loop poster="imagenes/vocho1.jpg"> <!-- el height se pone en proporcion al width, se recomienda na imagen del tamaño del reproductor -->
+			<!-- Para agregar el video en diferentes formatos-->
+			<source src="videos/mi.mp4">
+			<source src="otro formato">
+		</video>
+	</section>
+
+</body>
+</html>

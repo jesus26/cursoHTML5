@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+	<meta charset="UTF-8">
+	<head>
+		<title>05 - Figure y figcaption</title>
+
+		<!-- Logo de la ventana -->
+		<link rel="shortcut icon" type="image/x-icon" href="imagenes/logo.ico" />
+	</head>
+	<body>
+		<header>
+			<!-- Se recomienda solo un h1 en la página -->
+			<h1>Bienvenido a mi mundo</h1>
+		</header>
+
+		<!-- Etiqueta para poner la barra de navegación -->
+		<nav>
+			<!-- Se utiliza para crear listas desordenadas -->
+			<ul>
+				<!-- Presenta cada item de la lista -->
+				<li>¿Quién soy?</li>
+				<li>¿De dónde vengo?</li>
+				<li>¿Cúal es mi objetivo?</li>
+			</ul>
+		</nav>
+
+		<aside>
+			<blockquote>
+				Primer elemento
+			</blockquote>
+			<blockquote>
+				Segundo elemento
+			</blockquote>
+			<blockquote>
+				Tercer elemento
+			</blockquote>
+		</aside>
+
+		<section>
+			<article>
+				<header>
+					<hgroup>
+						<h2>Titulo de noticia 1</h1>
+						<h3>Subtitulo de la noticia 1</h3>
+					</hgroup>
+				</header>
+
+				<!-- Para insertar elementos externos como imagenes, videos, etc, elementos relacionados pero independientes -->
+				<figure>
+					<!-- Insertar una imagen, se recomienda modificar con css -->
+					<img src="imagenes/moto.png" alt="motocicleta" /> <!-- Se recomienda el uso de imagenes libres -->
+					
+					<img src="imagenes/camaro.jpg" >
+					
+					<!-- Descripción de la imágen -->
+					<figcaption>
+						Descripcion de la imagen
+					<figcaption>	
+				</figure>
+
+				<p>
+					<!-- Resaltar elemento con marcado amarillo -->
+					<mark>Noticia 1<mark>
+				</p>
+				<p>
+					Siguiendo hablando de la 
+					<!-- Poner en cursiva, sustituye a <i>, indicar enfásis, tiene importancia semantica -->
+					<em>noticia 1</em>
+				</p>
+				<p>
+					Termina 
+					<!-- negritas, se categoriza en los buscadores -->
+					<strong>noticia 1</strong>
+				</p>
+				<footer>
+					<p>Pie de la noticia uno</p>
+				</footer>
+			</article>
+
+			<article>
+				<header>
+					<h2>En busca de la felicidad</h2>
+				</header>
+				<p>La pelicula 
+					<!--Para nombre de libros, peliculas, etc, mismo efecto visual que em pero fiferente en semantica -->
+					<cite>
+						En busca de la felicidad
+					</cite>
+					es grandiosa
+				</p>
+				<p>Siguiendo hablando de la noticia 2</p>
+				<p>Termina noticia 2</p>
+				<footer>
+					<p>Pie de la noticia dos</p>
+				</footer>
+			</article>
+
+			<article>
+				<header>
+					<h2>Titulo de noticia 3</h2>
+				</header>
+				<p>Noticia 3</p>
+				<p>Siguiendo hablando de la noticia 3</p>
+				<p>Termina noticia 3</p>
+				<footer>
+					<p>Pie de la noticia tres</p>
+				</footer>
+			</article>
+		</section>
+
+		<footer>
+			Jesus Ernesto Pérez Becerra
+			<!-- Debe ir dentro del footer, para direcciones, tel, etc -->
+			<address>Tel: 321456721</address>
+			
+			<!--Para textos legales, derechos reservados, copyright, etc, blocklevel . salto de linea -->
+			<small>
+				Todos los derechos reservados
+			</small>
+		</footer>
+	</body>
+</html>

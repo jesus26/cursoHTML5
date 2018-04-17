@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>18 - Modificar Reproductor Videos Parte II</title>
+	<style type="text/css">
+		#video{
+			width: 400px;
+			margin: 20px auto;
+			background-color: #F93;
+			padding: 5px;
+			border: 3px solid #F00;
+			-moz- border-radius: 10px;
+			-webkit- border-radius: 10px;
+			-o- border-radius: 10px;
+			-ms- border-radius: 10px;
+			border-radius: 10px;
+		}
+
+		nav{
+			margin: 5px 0; /*Margen superior e inferior de 5 px e izq y der de 0*/
+		}
+
+		#botones{
+			float: left; /*lo que aparezca a continuación (barra de progreso) rodeará al botón*/
+			width: 100px;
+			height: 20px;
+		}
+
+		#barra{
+			background-color: #FFF;
+			width: 320px;
+			height: 16px;
+			border: 1px solid #666;
+			padding: 3px;
+			margin-left: 60px;
+		}
+
+		#progreso{
+			position: absolute; /*Para que lo deje a la izquiera*/
+			width: 0px; /*cero porque así empieza*/
+			height: 16px;
+			background: rgba(0,0,150,7);
+		}
+
+	</style>
+
+	<script type="text/javascript" src="_18_funcionalidad_barra.js"></script>
+
+</head>
+<body>
+	<section id="video">
+		<!-- Para poder modificar los controles es necesario quitar el atributo controls ya que si lo dejamos lo duplicaria, los default mas los nuestros 
+	poster="imagenes/vocho1.jpg"-->
+		<video id="miVideo"  width="400">
+			<!-- Para agregar el video en diferentes formatos-->
+			<source src="videos/mi.mp4">
+			<source src="otro formato">
+		</video>
+
+		<!-- Agregar los controles un poco más abajo-->
+		<nav>
+			<!-- Especificar controles de navegación de un video-->
+			<div id="botones">
+				<!-- Contenedor de botones-->
+				<button type="button" id="reproducir">Play</button>
+			</div>
+			<div id="barra">
+				<!-- COntenedor de barra(contendrá otra barra de progreso) -->
+				<div id="progreso">
+					<!-- Representa la barra de progreso -->
+					
+				</div>
+			</div>
+		</nav>
+	</section>
+
+</body>
+</html>

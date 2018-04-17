@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>09 - Degradados y transiciones</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="imagenes/logo.ico" />
+	
+	<style type="text/css">
+		#principal{
+			width: 500px;
+			text-align: center;
+			margin: 55px auto;
+			padding: 20px 30px;
+			border: 3px solid #F00;
+			border-radius: 10px;
+			/*Establecer sombra: Color, desplazamiento horizontal, desplazamiento vertical, opacidad (difuminación)*/
+			box-shadow: #999 5px 5px 10px;
+			/*Degradado, se indica el navegador, de donde comienza(top, button, left, right), color fuerte y color bajo*/
+			/*Para el Navegador Mozilla*/
+			background: -moz-linear-gradient(top, #00F, #3FF); /*Se pueden agregar porcentajes despues de los colores para saber que tanto ocupa cada color*/
+			
+			/*Para poner un degradado radial, navegador, de donde empieza(center), tipo(circle, ellipse), color fuerte, color débil
+			background: -moz-radial-gradient(center, ellipse, #00F, #3FF);*
+			/
+			/*Para navegador Chrome y actualmente para Opera*/
+			background: -webkit-linear-gradient(top, #00F, #3FF);
+			/*Para navegador Opera*/
+			background: -o-linear-gradient(top, #00F, #3FF);
+			/*Para navegador Explorer*/
+			background: -ms-linear-gradient(top, #00F, #3FF);
+			/*Creando un borde punteado, puede aplicarse a todos los elementos*/
+			outline: 2px dashed #00F;
+			/*Para cambiar el tamaño del elemento, el parametro es de 0 a n puede ir en decimales, si sobrepasa el 1 el tamaño aumenta con respecto al original, para darle la vuelta se le agrega un segundo parametro con valor -1*/
+			-webkit-transform:scale(0.5); 
+			/*-webkit-transform:rotate(5deg); /*Para girar el elemento, se pasan los grados como parametro*/
+			-webkit-transition:-webkit-transform 1s ease 0.1s; /*Transicion para no ver efecto brusco de transformacion, dura un segundo, el efecto que muestra, cuanto tiempo para emprezar después de situar el mouse sobre el elemento*/
+		}
+
+		/*Creando subclase para hacer algo cuando el ratón pase sobre el elemento*/
+		#principal:hover{
+			/*Para girar el elemento, se pasan los grados como parametro*/
+			 -webkit-transform:rotate(350deg); /*Miniefecto de roll over*/		
+		}
+
+		/*Selector de fuente propia para que la página se vea igual siempre (aunque el usuario no tenga determinada fuente)*/
+		@font-face{
+			/*Nombre de la fuente creada*/
+			font-family: 'MiPropiaFuente';
+			/*nombre exacto del archivo de la fuente, debe estar en la raiz ya sea del servidor o en la carpeta del proyecto local*/
+			src:url('Abduction2002.ttf');
+		}
+
+		#titulo{
+			/*Si no se encuentra la fuente Verdana busca la fuente Geneva, en este caso no es necesario ya que está una fuente propia*/
+			font: bold 36px 'MiPropiaFuente'/*Verdana, Geneva*/;
+			text-shadow: 3px 3px 5px #0F0;
+			/*Colores para el texto usado para transparencia, el ultimo parametro va de 0(transparencia total) a 1(no transparencia)*/
+			/*Parametros: rojo, verde, azul, transparencia*/
+			color: rgba(0,0,0,6); /*a de alfa (transparenca)*/
+		}
+	</style>
+</head>
+<body>
+	<header id="principal">
+		<span id="titulo">Aprendiendo HTML</span>
+	</header>
+</body>
+</html>

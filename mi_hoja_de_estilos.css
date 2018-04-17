@@ -1,0 +1,44 @@
+/*body{
+	background-color: #00F;
+} selector de etiqueta*/
+.header{
+	background-color: #00F;
+	/*Selector de clase*/
+}
+
+#cabeceraweb{
+	/*Selectr de id*/
+	background-color: #00F;	
+}
+
+#main_navigation{
+	background-color: #F00;
+}
+
+#lateral{
+	background-color: #0F0;
+	float: left;
+	height: 800px;
+}
+
+#main_content{
+	background-color: #606;
+	margin-left: 220px; /*Debido a que la barra lateral está flotando el margin se aplica desde
+	el borde izquierdo de la pnatalla*/
+	padding-left: 15px;
+	padding-top: 15px;
+}
+
+#main_footer{
+	background-color: #FF0;
+	clear: both; /*Para tomar a los elementos float como elementos normales y no encimar el contenido*/
+}
+
+li{
+	background-color: #FF0;
+	display: inline; /*Mostrar un elemento a continuacion del otro*/
+}
+
+/*la propiedad float rompe el flujo de colocacion de los elementos, además hace que un elemento no ocupe el 100% de la pantalla,
+si no solo el ancho del texto, y los otros elementos se colocan al rededor del elemento con float*/
+

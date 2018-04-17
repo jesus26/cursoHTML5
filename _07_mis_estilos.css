@@ -1,0 +1,47 @@
+body{
+	background-color: #58D3F7;
+}
+
+#cabecera{
+	background-color: #81F79F;
+}
+
+.resaltar{
+
+}
+
+#navegacion{
+	background-color: #F00 
+}
+
+li{
+	background-color: #FF0;
+	/*convertir de block a inline para que cada elemento no ocupe el 100% de ancho*/
+	display: inline;
+}
+
+#barralateral{
+	background-color: #DFC12A;
+	/*Cambiando a barra lateral con float(romper el flujo de acomodo),
+	el contenedor ya no ocupa el 100% de la pantalla, solo lo necesario para
+	el contenido, los elementos que haya debajo se situaran rodeando al contenedor*/
+	float: left;
+	/*dando altura statica ya que el alto se adapta al contenido*/
+	height: 1007px;
+}
+
+#contenidoprincipal{
+	background-color: #606;
+	/*Poniendo margin, para tener una separación entre el borde de un elemento y ell borde de llo que pueda haber a su alrededor,
+	en este caso el elemento float se ignora por lo que el espacio
+	es desde el borde de la página*/
+	margin-left: 210px;
+	padding: 10px; /*Separación entre el borde del contenedor y el contenido de ese contenedor*/
+}
+
+#pieprincipal{
+	background-color: #FF0;
+	/*Tratando el elemento flotante como normal*/
+	clear: both;
+	margin-top: 30px; /*Toma en cuenta el contenido principal debiso a que aside es float y no lo toma en cuenta*/
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<head>
+	<title>07 - Modelo caja contenedor</title>
+	<link rel="stylesheet" type="text/css" href="_07_mis_estilos.css"/>
+
+	<link rel="shortcut icon" type="image/x-icon" href="imagenes/logo.ico" />
+
+	<!-- Ejemplo de css en el header que solo afectaría a está página -->
+	<style type="text/css">
+		#blockquoteDos{
+			background-color: #422ADF;
+		}
+	</style>
+</head>
+<body>
+	<header id="cabecera">
+		<!-- Se recomienda solo un h1 en la página -->
+		<h1>Bienvenido a mi mundo</h1>
+	</header>
+	
+	<nav id="navegacion">
+		<ul>
+			<li>Quienes somos?</li>
+			<li style="background-color:#0F0;">Nuestros Productos</li> <!-- Diseño in line, solo afecta esta etiqueta -->
+			<li>Contactanos</li>
+		</ul>
+	</nav>
+
+	<aside id="barralateral">
+		<blockquote>
+			Primer elemento
+		</blockquote>
+		<blockquote id="blockquoteDos">
+			Segundo elemento
+		</blockquote>
+		<blockquote>
+			Tercer elemento
+		</blockquote>
+	</aside>
+	
+	<section id="contenidoprincipal">
+		<article>
+				<header>
+					<hgroup>
+						<h2>Titulo de noticia 1</h1>
+						<h3>Subtitulo de la noticia 1</h3>
+					</hgroup>
+				</header>
+
+				<!-- Para insertar elementos externos como imagenes, videos, etc, elementos relacionados pero independientes -->
+				<figure>
+					<!-- Insertar una imagen, se recomienda modificar con css -->
+					<img src="imagenes/moto.png" alt="motocicleta" />
+					
+					<!-- Descripción de la imágen -->
+					<figcaption>
+						Descripcion de la imagen
+					<figcaption>	
+				</figure>
+
+				<p>
+					<!-- Resaltar elemento con marcado amarillo -->
+					<mark>Noticia 1<mark>
+				</p>
+				<p>
+					Siguiendo hablando de la 
+					<!-- Poner en cursiva, sustituye a <i>, indicar enfásis -->
+					<em>noticia 1</em>
+				</p>
+				<p>
+					Termina 
+					<!-- negritas, se categoriza en los buscadores-->
+					<strong>noticia 1</strong>
+				</p>
+				<footer>
+					<p>Pie de la noticia uno</p>
+				</footer>
+			</article>
+
+			<article>
+				<header>
+					<h2>En busca de la felicidad</h2>
+				</header>
+				<p>La pelicula 
+					<!--Para nombre de libros, peliculas, etc -->
+					<cite>
+						En busca de la felicidad
+					</cite>
+					es grandiosa
+				</p>
+				<p>Siguiendo hablando de la noticia 2</p>
+				<p>Termina noticia 2</p>
+				<footer>
+					<p>Pie de la noticia dos</p>
+				</footer>
+			</article>
+
+			<article>
+				<header>
+					<h2>Titulo de noticia 3</h2>
+				</header>
+				<p>Noticia 3</p>
+				<p>Siguiendo hablando de la noticia 3</p>
+				<p>Termina noticia 3</p>
+				<footer>
+					<p>Pie de la noticia tres</p>
+				</footer>
+			</article>
+		</section>
+		
+		<footer id="pieprincipal">
+			Jesus Ernesto Pérez Becerra
+			<!-- Debe ir dentro del footer, para direcciones, tel, etc-->
+			<address>Tel: 321456721</address>
+			
+			<!--Para textos legales, derechos reservados, copyright, etc, blocklevel . salto de linea-->
+			<small>
+				Todos los derechos reservados
+			</small>
+		</footer>
+	</body>
+
+</html>

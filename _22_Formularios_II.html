@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>22 - Formularios II</title>
+</head>
+<body>
+	<section>
+		<form name="miFormulario" id="miFormulario" method="GET" Autocomplete="off">
+			Email:&nbsp;<input type="email" name="email" id="imail" required multiple>
+			<br>
+			<br>
+			Search:&nbsp;<input type="search" name="search" id="search" required autofocus>
+			<br>
+			<br>
+			<br>
+			<br>
+			Number: &nbsp;<input type="number" name="num" id="num" min="10" max="50" step="5" placeholder="Ingrese un numero">
+			<br>
+			<br>
+			Range:&nbsp;<input type="range" id="rang" name="rang" min="10" max="50" step="5">
+			<br>
+			<br>
+			<!-- Campo tipo fecha -->
+			Fecha: &nbsp;<input type="date" name="fecha" id="fecha">
+			<br>
+			<br>
+			<!-- Permite seleccionar un mes, puede ser week -->
+			Fecha: &nbsp;<input type="month" name="fecha" id="fecha">
+			<br>
+			<br>
+			Tiempo : &nbsp;<input type="time" name="time" id="time">
+			<br>
+			<br>
+			Codigo Postal: &nbsp; <input pattern="[0-9]{6}" name="postal" id="postal" placeholder="6 digitos minimo">
+			<!-- Atributos nuevos, required(obligatorio), multiple(enviar más de un dato dentro de un campo por ejemplo 2 email separados por coma), autofocus (en donde queremos que aparezca el cursor al cargar la página), pattern(establecer validaciones como para el codigo postal), form(construir elemento del formulario fuera del formulario y se envia)-->
+			<input type="submit" value="Enviar">
+		</form>
+	</section>
+
+	<img src="imagenes/vocho1.jpg">
+	<!-- Elemento fuera del formulario pero ligado con le atributo form con id del formulario-->
+	Nombre: &nbsp;<input type="text" name="nombre" id="nombre" form="miFormulario" required>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>23 - Datalist y API Forms</title>
+	<style type="text/css">
+		table{
+			text-align: center;
+			background-color: #F96;
+			width: 25%;
+			margin: auto;	/*Para centrar el contenedor (tabla)*/
+			border: 2px dashed #F30;
+		}
+
+		td{
+			padding: 15px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function comenzar(){
+			//Identificando campos a manipular
+			var nombre = document.getElementById("nombre");
+			var apellido = document.getElementById("apellido");
+
+			//El evento input se desencadena cuando se introduce información (cada que se teclea).
+			nombre.addEventListener("input",validar,false);
+			apellido.addEventListener("input",validar,false);
+
+			validar();
+		}
+
+		function validar(){
+			if(nombre.value == "" && apellido.value == ""){
+				nombre.setCustomValidity("Introduce nombre o apellido");
+				nombre.style.background = "#FFDDDD";
+				apellido.style.background = "#FFDDDD";
+			}else{
+				//anular mensaje de error
+				nombre.setCustomValidity("");
+				nombre.style.background = "#FFFFFF";
+				apellido.style.background = "#FFFFFF";
+			}
+		}
+
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<!-- API(Application Programming Interface).- conjunto de objetos, propiedaes y metodos predefinidos, listos para ser utilizados en una aplicacion o programa -->
+
+	<!-- API Forms -->
+	<!-- <section>
+		<form name="registro" id="registro" method="GET"> -->
+			<!-- Datalist -->
+<!--			<datalist id="informacion">
+				<option value="3241056789" label="Telefono 1">
+				<option value="4449876315" label="Telefono 2">
+				<option value="3460987865" label="Telefono 3"></option>
+			</datalist>
+			Telefono: &nbsp; <input type="tel" name="tel" id="tel" list="informacion"> --><!-- Le estamos diciendo al campo que tiene que tomar la informacion de una lista-->
+<!--		</form>
+	</section> -->
+
+	
+	
+	<!-- Avisar con mensaje personalizado con metodo setCustomValidity() -->
+	<section>
+		<form name="registro_usuario" method="get">
+			<!-- Creando una tabla -->
+			<table>
+				<tr>
+					<td>Nombre:</td>
+					<td><input type="text" name="nombre" id="nombre"></td>
+				</tr>
+				<tr>
+					<td>Apellido:</td>
+					<td><input type="text" name="apellido" id="apellido"></td>
+				</tr>
+				<tr>
+					<td>Edad:</td>
+					<td><input type="number" name="edad" id="edad" min="1" max="100"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="enviar" id="enviar" value="Enviar"></td>
+				</tr>
+			</table>
+		</form>
+	</section>
+</body>
+</html>

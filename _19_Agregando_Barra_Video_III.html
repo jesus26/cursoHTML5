@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>19 - Agregar barra de progreso Videos Parte III</title>
+	<style type="text/css">
+		#video{
+			width: 300px;
+			margin: 20px auto;
+			background-color: #F93;
+			padding: 5px;
+			border: 3px solid #F00;
+			-moz- border-radius: 10px;
+			-webkit- border-radius: 10px;
+			-o- border-radius: 10px;
+			-ms- border-radius: 10px;
+			border-radius: 10px;
+		}
+
+		nav{
+			margin: 5px 0;
+		}
+
+		#botones{
+			float: left;
+			width: 100px;
+			height: 20px;
+		}
+
+		#barra{
+			background-color: #FFF;
+			width: 220px;
+			height: 16px;
+			border: 1px solid #666;
+			padding: 3px;
+			margin-left: 60px;
+		}
+
+		#progreso{
+			position: absolute;
+			width: 0px;
+			height: 16px;
+			background: rgba(0,0,150,7);
+		}
+
+	</style>
+
+	<script type="text/javascript" src="_19_funcionalidad_barra.js"></script>
+</head>
+<body>
+	<section id="video">
+		<video id="miVideo"  width="300" >
+			<source src="videos/mi.mp4">
+			<source>
+		</video>
+
+		<nav>
+			<div id="botones">
+				<button type="button" id="reproducir">Play</button>
+			</div>
+			<div id="barra">
+				<div id="progreso">
+					
+				</div>
+			</div>
+		</nav>
+	</section>
+
+</body>
+</html>

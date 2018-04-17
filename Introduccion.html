@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Curso de Programacion HTML5</title> <!-- Los navegadores buscan por titulo-->
+
+	<link rel="stylesheet" type="text/css" href="mi_hoja_de_estilos.css">
+</head>
+<body>
+	<header id="cabeceraweb" >
+		<h1>Este es el título de mi web</h1> 
+	</header>
+
+	<nav id="main_navigation">
+		<ul>
+			<li>Quienes somos</li>
+			<li>Nuestros productos</li>
+			<li>Precios</li>
+			<li>Contactanos</li>
+		</ul>
+	</nav>
+
+	<aside id="lateral">
+		<blockquote>
+			<!-- Esta etiqueta se utiliza para textos muy largos-->
+			Primer Elemento
+		</blockquote>
+		<blockquote>
+			Segundo Elemento
+		</blockquote>
+		<blockquote>
+			Tercer Elemento
+		</blockquote>
+	</aside>
+	<section id="main_content">
+		<!-- Etiqueta para el contenido principal -->
+		<article>
+			<!-- Etiqueta para separar el contenido-->
+			<header>
+				<!-- La etiqueta header se puede utilizar como cabecera debtro de un articulo-->
+				<hgroup>
+					<!-- Etiqueta para indicar que dos etiquetas h van juntas-->
+					<h2>Titulo de noticia 1</h2> <!-- EN navegadores como chrome o firefox solo se toma un h1 com el titulo, entonces
+					para evitar que el h1 se muestre más pequeño que el h2 podemos sehir la gerarquia, titulo general h1, titulo de apartados h2 y subtitulos h3 -->
+					<h3>Subtitulo de la noticia 1</h3>
+				</hgroup>
+			</header>
+			<figure>
+				<!-- Para colocar elementos externos, inmagenes, videos, etc-->
+				<img src="imagenes/camaro.jpg"/> <!-- Los formatos aceptados son jpg, png, gif (son formatos comprimidos)(jpg admite millones de colores, gif solo 256 colores)-->
+				<figcaption>
+					<!-- Para poner descripcion de imagen -->
+					Camaro rojo del futuro
+				</figcaption>
+			</figure>
+			<p>Lorem ipsum dolor sit amet, <mark> <!-- Etiqueta para resaltar texto -->consectetur adipisicing elit. Dolore, cupiditate vitae! Eaque sed,</mark> incidunt itaque cumque excepturi molestias repudiandae consequatur fugiat labore, ab dolor minima dolores id quis adipisci ipsum.</p>
+			<p>Lorem ipsum <em><!-- sustituye a <i>, sirve para enfatisar textos -->dolor sit amet, consectetur </em>adipisicing elit. Iste exercitationem asperiores earum vitae eveniet quaerat velit amet voluptate quas enim dolore voluptatum modi explicabo tempora libero, tenetur itaque voluptatem aliquid!</p>
+			<p>Lorem <strong><!-- Para poner en negritas, reemplazo de <b>, también lo toma en cuenta el navegador al hacer busquedas -->ipsum dolor sit amet, consectetur adipisicing elit. Sequi aliquam </strong>provident illum rem praesentium officia cum quam laudantium dignissimos aut eveniet rerum nobis earum, deleniti, inventore iure asperiores! Praesentium, quisquam.</p>
+			<footer>
+				<p>Comntarios de usurio</p>
+			</footer>
+		</article>
+
+		<article>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, cupiditate vitae! Eaque sed, incidunt itaque cumque excepturi <cite><!-- Para poner titulos de libros, canciones, peliculas, trabajos propios-->Lo que el viento se llevo </cite>dolores id quis adipisci ipsum.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste exercitationem asperiores earum vitae eveniet quaerat velit amet voluptate quas enim dolore voluptatum modi explicabo tempora libero, tenetur itaque voluptatem aliquid!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi aliquam provident illum rem praesentium officia cum quam laudantium dignissimos aut eveniet rerum nobis earum, deleniti, inventore iure asperiores! Praesentium, quisquam.</p>
+
+			<time date="2016/06/30" pubdate><!-- Indica al navegador que se refiere a una fecha --> Esta página fue creada el 30/06/2016</time>
+		</article>
+	</section>
+	<footer id="main_footer">
+		<!-- Etiqueta para el pie depágina -->
+		<small><!-- Para poner textos legales -->Derechos reservados</small><address> <!-- Debe ir dentro del footer, crea un bloklevel(lleva un salto de linea tanto superior como inferior)--> Tel: 1234567890 </address>
+	</footer>
+</body>
+</html>

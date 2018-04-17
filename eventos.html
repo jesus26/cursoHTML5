@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos HTML5</title>
+	<style type="text/css">
+		img{
+			border: 1px dashed Blue;
+		}
+	</style>
+	<script type="text/javascript">
+		//Declarar variable global(cambia array para aplicarlo a varios elementos)
+		//var image;
+		var image = new Array(2);
+
+		function tipoAuto(){
+			alert("Super vocho");
+		}
+
+		/*function daTipoAuto(){
+			document.getElementsByTagName("img")[0].onclick = tipoAuto;
+		}*/
+
+		function daTipoAuto(){
+			//Obtiene el primer elemento o elemento del inidice segun se encuentren en la pagina(se metio en un for ara abarcar a varios elementos)
+			for (var i = 0; i < 3; i++) {							image[i] = document.getElementsByTagName("img")[i];
+
+				/*parametros: tipo de evento, que se ejecutará, booleano para saber como actual con eventos anidados*/
+			};
+
+/*			image[0].addEventListener("mouseover", crecer, false);
+			image[0].addEventListener("mouseout", disminuir, false);
+			image[0].addEventListener("click", tipoAuto , false);*/
+
+			//Cada apartado es de una imagen
+			/*Funciones anonimas, no tienen nombre*/
+			image[0].addEventListener("mouseover", function(){image[0].width=500; image[0].height=300}, false);
+			image[0].addEventListener("mouseout", function(){image[0].width=400; image[0].height=292}, false);
+			image[0].addEventListener("click", tipoAuto , false);
+
+			image[1].addEventListener("mouseover", function(){image[1].width=500; image[1].height=300}, false);
+			image[1].addEventListener("mouseout", function(){image[1].width=400; image[1].height=292}, false);
+			image[1].addEventListener("click", tipoAuto , false);
+
+			image[2].addEventListener("mouseover", function(){image[2].width=500; image[2].height=300}, false);
+			image[2].addEventListener("mouseout", function(){image[2].width=400; image[2].height=292}, false);
+			image[2].addEventListener("click", tipoAuto , false);
+		}
+
+		function crecer(){
+			image.width = 500;
+			image.height = 300;
+		}
+
+		function disminuir(){
+			image.width = 400;
+			image.height = 292;
+		}
+
+		window.onload=daTipoAuto;
+	</script>
+</head>
+<body>
+	<p>
+		<!-- Crear eventos en linea (dentro de la propia etiqueta) por ejemplo onClick="tipoAuto();", onmouseover="tipoAuto();"-->
+		
+		<!-- También se pueden crear eventos desde javascript, inicializados con la ventada window.onload-->
+		<img src="imagenes/vocho1.jpg"/>&nbsp;&nbsp;<img src="imagenes/vocho2.jpg"/>&nbsp;&nbsp;<img src="imagenes/vocho3.jpg"/>
+
+
+	</p>
+</body>
+</html>

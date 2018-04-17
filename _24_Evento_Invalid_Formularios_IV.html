@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>24 - Evento Invalid, Formularios III API forms</title>
+	<style type="text/css">
+		table{
+			text-align: center;
+			background-color: #F96;
+			width: 25%;
+			margin: auto;
+			border: 2px dashed #F30;
+		}
+
+		td{
+			padding: 15px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		//Variable global para utilizarla en diferentes funciones
+		var edad;
+
+		function comenzar(){
+			//identificar elemento
+			edad = document.getElementById("miEdad");
+
+			//Agregar evento listener, cada vez que se cambie el estado del elmento.
+			edad.addEventListener("change", cambia_rango, false);
+
+			//Invalid se general cada vez que no se cumple la validadción.
+			//Poner a la escucha bajo el evento invalid.
+			//poner formulario a la escucha, El evento invalid genera un objeto denominado error al no estar lleno el form
+			document.datos_usuario.addEventListener("invalid",validar, true); //es true porque si es un elemento anidado, se le da prioridad al formulario y depués al evento de la edad.
+
+			//En una sola línea la identificacion y el escucha para el boton
+			document.getElementById("enviar").addEventListener("click", enviar, false);
+
+			//Al introducir datos en cualquier punto
+			document.datos_usuario.addEventListener("input", validar_tiempo_real, false);
+		}
+
+		function cambia_rango(){
+			var salida = document.getElementById("rango");
+
+			var calculo = edad.value - 30; //Por que en default está en 30
+			if(calculo < 30){
+				calculo = 0;
+				edad.value = 30;
+			}
+
+			salida.innerHTML = calculo + " a " + edad.value;
+		}
+
+		//parametro
+		function validar(e){
+			//Almacenando un error de la funcion valid
+			//La propiedad target nos dice cual es el objeto que ha ocacionado el error.
+			var elemento = e.target;
+
+			//Coloreando fondo rojo
+			elemento.style.background="#FFDDDD";
+
+		}
+
+		//Creando la funcion para enviar lo datos
+		function enviar(){
+			var correcto = document.datos_usuario.checkValidity(); //Este metodo regresa true si la validacion ha sido correcta o false por el contrario
+
+			if(correcto == true){
+				//Enviar el formulario.
+				document.datos_usuario.submit();
+			}
+		}
+
+		function validar_tiempo_real(e){
+			var elemento = e.target;
+
+			if(elemento.validity.valid == true){
+				elemento.style.background = "#FFFFFF";
+			}else{
+				elemento.style.background = "#FFDDDD";
+			}
+		} 
+
+		//Cargar al comenzar la página
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<section>
+		<form name="datos_usuario" method="get" autocomplete="off">
+			<table>
+				<tr>
+					<td>Usuario:</td>
+					<td>
+						<!--Se pueden introducir mayusculas y minsculas, obligaatorios 3 caracteres -->
+						<input pattern="[A-Za-z]{3}" name="miUsuario" id="miUsuario" maxlenght="5" required>
+					</td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td>
+						<input type="email" name="miEmail" id="miEmail" required>
+					</td>
+				</tr>
+				<tr>
+					<td>Edad:</td>
+					<td>
+						<input type="range" name="miEdad" id="miEdad" min="1" max="100" step="30" value="30">
+					</td>
+				</tr>
+				<tr>
+					<!-- Texto que podrá ser modificado dinamicamente -->
+					<td>
+						<!-- Servira para un binding -->
+						<output id="rango" name="rango" >0 a 30 </output>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" name="enviar" id="enviar" value="Enviar">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</section>
+</body>
+</html>

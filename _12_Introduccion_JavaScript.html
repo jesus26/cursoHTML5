@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>12 - Introduccion a JavaScript</title>
+
+	<!-- 
+		JavaScript
+		Sirve para agregar dinamismo al la página
+		Hacer que la web responda a eventos que hace el usuario (como hacer clic, etc)
+
+		El código js se puede colocar en:
+		- in line, dentro de una etiqueta, poco recomendable
+		- entre etiqueta script que va normalmente en el head (puede ir en cualquier lugar pero se recomienda en el head)
+		- en un documento aparte que se linkea a una página web
+
+		En js todas las sentencias terminan en ;
+	 -->
+
+	<link rel="shortcut icon" type="image/x-icon" href="imagenes/logo.ico" />
+
+	<!-- Declarando alert en la misma página html
+		El alert es conocido como mensaje modal, caracterísitcas:
+		- No permite realizar ninguna acción si está abierto
+	 -->
+	<script type="text/javascript">
+		alert("Hola, mensaje del head del mismo documento");
+	</script>
+
+	<!-- Link de archivo externo de Js, generalmente después del link de css-->
+	<script type="text/javascript" src="_12_mi_script.js"></script>
+</head>
+<body>
+	<!-- Script inline, dentro de una etiqueta, etiqueta block -->
+	<p onClick = "alert('Hola, Alerta inline');">Estudiando JavaScript de forma autodidacta</p> 
+
+	<!--LLamando función Saludo() de archivo externo con evento onClick-->
+	<p onClick="Saludo()";>Estudiando JavaScript de forma autodidacta</p>
+
+	<!-- LLamando función Saludo() de archivo externo con evento onmouseover -->
+	<p onmouseover="Saludo();">Estudiando JavaScript</p>
+</body>
+</html>

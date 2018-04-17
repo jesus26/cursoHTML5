@@ -1,0 +1,38 @@
+/*Selector de etiqueta, afecta a todas las etiqeutas de ese nombre*/
+body{
+	background-color: #505E86;
+}
+
+/*Selector de tipo id, afecta a las etiquetas con ese id, normalmente el id es único*/
+#cabecera{
+	background-color: #81F79F;
+}
+
+/*Selector de clase*/
+.resaltar{
+
+}
+
+#navegacion{
+	background-color: #F00 
+}
+
+#barralateral{
+	background-color: #0F0;
+}
+
+#blockquoteUno{
+	background-color: #D3DF2A;
+}
+
+#contenidoprincipal{
+	background-color: #606;
+}
+
+#noticiaUno{
+	background-color: #FF0;
+}
+
+#pieprincipal{
+	background-color: #FF0;
+}

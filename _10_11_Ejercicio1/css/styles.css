@@ -1,0 +1,127 @@
+/*Para tener un buen diseño css se recomienda antes resetear las propiedades que el navegador
+asigna por default*/
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote, figcaption {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { padding-left: 1.4em; list-style: decimal; }
+ul { padding-left: 1.4em; list-style:square; }
+q:before, q:after { content:''; }
+
+body{
+	/*Fuente para toda la fuente de la página*/
+	font-size: 62.5%;
+}
+
+#titulo{
+	/*fondo, utilizando un degradado, parametros: de donde inicia, color fuerte, color débil*/
+	background: -webkit-linear-gradient(top, #00F, #0CF);
+	background: -moz-linear-gradient(top, #00F, #0CF);
+	background: -ms-linear-gradient(top, #00F, #0CF);
+	background: -o-linear-gradient(top, #00F, #0CF);
+	/*Bordes redondeados, una medida aplica para los 4 lados*/
+	border-radius: 10px;
+	/*Sombreado para el contenedor, parametros: color, distancia horizontal, distancia vertical, opacidad*/
+	box-shadow: #00F 7px 7px 8px;
+	/*Color del texo*/
+	color: #FFF;
+	/*Propiedades de la fuente
+	[bold, normal],tamaño de letra al multiplicar el tamaño actual * el parametro (por ejemplo 2em = doble del tamaño),
+	tipo de fuente (si no se encuantra una busca otra)*/
+	font: normal 2.4em Verdana, Geneva, sans-serif;
+	/*Separar contenedor por arriba y abajo y centrandolo horizontalmente*/
+	margin: 15px auto;
+	/*Separación entre el contenio y el borde del contenedor*/
+	padding: 15px;
+	/*Centrar texo dentro del contenedor*/
+	text-align: center;
+	/*Sombreado para el texto, parametros: color, distancia horizontal, distancia vertical, opacidad*/
+	text-shadow: #FFF 2px 2px 5px;
+	/*Ancho del contenedor*/
+	width: 45%;	
+}
+
+#subtitulo{
+	/*Color de la fuente*/
+	color: #000;
+	/*Propiedades de la fuente*/
+	font: bold 1.7em Verdana, Geneva, sans-serif;
+	/*Separación entre contenedor y otro contenedor*/
+	margin: 0;
+	/*Separación entre el contenido y el contenedor*/
+	padding: 5px, 0px, 5px, 0px;
+}
+
+section{
+	/*Borde, ancho del borde, tipo, color*/
+	border-top: 2px dashed #999;
+	/*Ancho del contenedor*/
+	width: 90%;
+	/*Centrar contenido*/
+	margin: 15px auto;
+}
+
+figure{
+	/*Se consige que el contenido a continuación rodeen al elemento*/
+	float: left;
+}
+
+/*Aplica solo a las imágenes dentro de la etiqueta figure*/
+/*Se le conoce como selector descendiente*/
+figure img{
+	/*Color de fondo*/
+	background: #666;
+	/*Esquinas redondeadas*/
+	border-radius: 7px;
+	/*Sombreado a la caje: color, separación horizontal, separación vertical, difuminación*/
+	box-shadow: #666 5px 5px 8px;
+	/*Separación entre contenido y contenedor*/
+	padding: 4px;
+	/*Suavisar efecto, parametros: tiempo de duración, efecto, tiempo de reconocer*/
+	-moz-transition:-moz-transform 0.3s ease-in-out 0.1s;
+	-ms-transition:-ms-transform 0.3s ease-in-out 0.1s;
+	-o-transition:-o-transform 0.3s ease-in-out 0.1s;
+	-webkit-transition:-webkit-transform 0.3s ease-in-out 0.1s;
+}
+
+/*Efecto al pasar el mouse sobre determinado elemento*/
+figure img:hover{
+	/*Efecto para aumentar el tamaño de las imagenes*/
+	-ms-transform:scale(1.2);
+	-moz-transform:scale(1.2);
+	-o-transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+figcaption{
+	/*Tipo de fuente*/
+	font-family: Arial;
+	/*Tamaño de fuente, (tamaño real * parametro)*/
+	font-size: 1.3em;
+	/*Espacio entre un contenedor y otro*/
+	margin-top: 5px;
+	/*Centrar texto*/
+	text-align: center;
+}
+
+footer{
+	/*Tratar a los elementos float como etiqueta block*/
+	clear: both;
+	/*Espacio entre contenido y contenedor*/
+	padding-top: 100px;
+}
+
+/*Propiedades para el texto dentro del footer*/
+footer p{
+	/*Propiedades de fuente*/
+	font: 1.6em Georgia;
+	/*Color de fuente*/
+	color: #666;
+	/*Espacio entre un contenedor y otro*/
+	margin: 10px, 8px;
+}

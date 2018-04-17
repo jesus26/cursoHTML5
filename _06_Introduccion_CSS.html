@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<head>
+	<title>06 - Introduccion a CSS</title>
+		<!-- La etiqueta link sirve para vincular una hoja de estilo -->
+		<link rel="stylesheet" type="text/css" href="_06_mis_estilos.css" />
+
+		<link rel="shortcut icon" type="image/x-icon" href="imagenes/logo.ico" />
+</head>
+<body>
+	<!-- 
+		¿Dónde se coloca el código css?
+		- En archivo independiente, se puede modificar y afectar a todas las páginas que vinculen esa hoja de estilo
+		- Cabecera del documento (dentro del head), se modifica la apariencia de solo esa página
+		- In line, se coloca dentro de una etiqueta, solo afecta a la etiqueta y su interior, esto está desaconsejado (o etiquetas muy concretas).
+
+		Modelo caja-contenedor
+		Dos tipos de etiquetas en HTML en cuanto a su estructura
+		- block, generan un salto de página por arriba y abajo de la etiqueta, ocupan el 100% de ancho de la pantalla.
+		- inline, no generan salto de linea
+
+		la moyoría de etiquetas son block
+
+		Los navegadores ya dan un css por defecto pero este puede ser diferente entre navegadores.
+	-->
+	<header id="cabecera">
+		<h1>Bienvenido a mi mundo</h1>
+	</header>
+
+	<nav id="navegacion">
+		<ul>
+			<li>¿Quién soy?</li>
+			<li>¿De dónde vengo?</li>
+			<li>¿Cúal es mi objetivo?</li>
+		</ul>
+	</nav>
+
+	<aside id="barralateral">
+		<blockquote id="blockquoteUno">
+			Primer elemento
+		</blockquote>
+		<blockquote>
+			Segundo elemento
+		</blockquote>
+		<blockquote>
+			Tercer elemento
+		</blockquote>
+	</aside>
+	
+	<section id="contenidoprincipal">
+		<article>
+				<header>
+					<hgroup>
+						<h2 id="noticiaUno">Titulo de noticia 1</h1>
+						<h3>Subtitulo de la noticia 1</h3>
+					</hgroup>
+				</header>
+
+				<figure>
+					<img src="imagenes/moto.png" alt="motocicleta" />
+					
+					<figcaption>
+						Descripcion de la imagen
+					<figcaption>	
+				</figure>
+
+				<p>
+					Noticia 1
+				</p>
+				<p>
+					Siguiendo hablando de la 
+					<em>noticia 1</em>
+				</p>
+				<p>
+					Termina 
+					<strong>noticia 1</strong>
+				</p>
+				<footer>
+					<p>Pie de la noticia uno</p>
+				</footer>
+			</article>
+
+			<article>
+				<header>
+					<h2>En busca de la felicidad</h2>
+				</header>
+				<p>La pelicula 
+					<cite>
+						En busca de la felicidad
+					</cite>
+					es grandiosa
+				</p>
+				<p>Siguiendo hablando de la noticia 2</p>
+				<p>Termina noticia 2</p>
+				<footer>
+					<p>Pie de la noticia dos</p>
+				</footer>
+			</article>
+
+			<article>
+				<header>
+					<h2>Titulo de noticia 3</h2>
+				</header>
+				<p>Noticia 3</p>
+				<p>Siguiendo hablando de la noticia 3</p>
+				<p>Termina noticia 3</p>
+				<footer>
+					<p>Pie de la noticia tres</p>
+				</footer>
+			</article>
+		</section>
+		<footer id="pieprincipal">
+			Jesus Ernesto Pérez Becerra
+			<address>Tel: 321456721</address>
+			
+			<small>
+				Todos los derechos reservados
+			</small>
+		</footer>
+
+	</body>
+
+</html>

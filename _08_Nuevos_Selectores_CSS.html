@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>08 - Nuevos selectores CSS</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="imagenes/logo.ico" />
+	
+	<style>
+		/*Selector para elementos con determinado nombre, puede aplicar con otras etiquetas*/
+		/*p[name = "miselementos"]{
+			color: #F3CD10; Amarillo
+		}*/
+
+		/*name^="m" significa que se aplica a los elementos que inician con m.*/
+		/*p[name ^= "m"]{
+			color: #33FFF9; Azul
+		}*/
+
+		/*name$="m" significa que se aplica a los elementos que terminen con m*/
+		/*p[name $= "m"]{
+			color: #74DF00; Verde
+		}*/
+
+		/*name*="ele" significa que se aplica a los elementos que contengan ele en cualquier punto*/
+		/*p[name*="ele"]{
+			color: #F00; rojo
+		}*/
+		
+		/*PSEUDOCLASE*/
+		/*Aplicar color a la etiqueta p que es número hijo del parametro p:nth-child(2), aplica al segundo hijo*/
+		/*p:nth-child(2){
+			color: #037203; verde
+		}*/
+
+		/*Aplicar color a los p impares de cada contenedor p:nth-child(odd)*/
+		/*p:nth-child(odd){
+			color: #FF66B2; rosa
+		}*/
+
+		/*Aplicar color a los p pares de cada contenedor p:nth-child(even)*/
+		/*p:nth-child(even){
+			color:#F80000; rojo
+		}*/
+
+		/*Pone estilo a los p que son primer hijo del contenedor p:first-child*/
+		/*p:first-child{
+			color: #3D0CDE; morado
+		}*/
+
+		/*Pone estilo a los p que son el último hijo del contenedor p:last-child, no debe haber otra etiqueta después*/
+		/*p:last-child{
+			color: #FFF000; amarillo
+		}*/
+
+		/*Aplica a un elemento p que sea unico hijo p:only-child*/
+		/*p:only-child{
+			color: #F00;
+		}*/
+
+		#principal{
+			width: 500px;
+			background-color: #00F;
+			text-align: center; /*Centra texto dentro del elemento*/
+			margin: 15px auto; /*Centrar elemento, 15 px por arriba y abajo, auto por ambos lados para centrar*/
+			padding: 20px 30px; /*Separación entre contenido y borde del contenedor*/
+			border: 3px solid #F00;
+			border-radius: 10px; /*Redondear esquinas*/
+			/*Color, desplazamiento horizontal, desplazamiento vertical, opacidad (difuminación)*/
+			box-shadow: #999 8px 8px 15px;
+		}
+
+		#titulo{
+			font: bold 36px Verdana;
+			text-shadow:#0F0 3px 3px 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<!--
+	<p name="miselementos">Hola</p>
+	<p>Jesús</p>
+	<p name="miselementosm">Junio</p>
+
+	<ul>
+		<li>Frutas</li>
+		<li>
+			<p>Mango</p>
+		</li>
+		<li>Uvas</li>
+		<li>Mangos</li>
+	</ul>
+
+	<p>Hasta luego</p>
+	-->
+
+	<header id="principal">
+		<span id="titulo"><!-- No agrega nada, solo para agregarle un estilo en particular-->Estilos CSS3</span>
+	</header>
+</body>
+</html>
