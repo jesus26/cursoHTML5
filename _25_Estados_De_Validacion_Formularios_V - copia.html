@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>24 - Evento Invalid, Formularios IV API forms</title>
+	<title>25 - Estados de validación, Formularios V API forms</title>
 	<style type="text/css">
 		table{
 			text-align: center;
@@ -18,32 +18,36 @@
 	</style>
 
 	<script type="text/javascript">
-		//Variable global para utilizarla en diferentes funciones
+		/*
+		Mensajes de validación para agregar mensajes propios cuando hay un error en la validación.
+		
+		valueMissing: true cuando el campo es requerido y está vacio.
+		patternMismatch: true cuando el valor no coincide con el formato pattern
+		typeMismatch: true cuando la sisntaxis no coincide con el tipo de campo (por ejemplo en campo email no se intriduce un email valido)
+		tooLong: true cuando se excede el maxlenght.
+		rangeUnderFlow: true cuando se sobrepasa el min
+		rangeOverflow: true cuando se sobrepasa el max.
+		stepMismatch: cuando el valor de number no corresponde al valor de step
+		customError: true cuando declaramos error personalizado con setCustomValidity.
+		*/
 		var edad;
 
 		function comenzar(){
-			//identificar elemento
 			edad = document.getElementById("miEdad");
 
-			//Agregar evento listener, cada vez que se cambie el estado del elmento.
 			edad.addEventListener("change", cambia_rango, false);
 
-			//Invalid se general cada vez que no se cumple la validadción.
-			//Poner a la escucha bajo el evento invalid.
-			//poner formulario a la escucha, El evento invalid genera un objeto denominado error al no estar lleno el form
-			document.datos_usuario.addEventListener("invalid",validar, true); //es true porque si es un elemento anidado, se le da prioridad al formulario y depués al evento de la edad.
+			document.datos_usuario.addEventListener("invalid",validar, true);
 
-			//En una sola línea la identificacion y el escucha para el boton
 			document.getElementById("enviar").addEventListener("click", enviar, false);
 
-			//Al introducir datos en cualquier punto
 			document.datos_usuario.addEventListener("input", validar_tiempo_real, false);
 		}
 
 		function cambia_rango(){
 			var salida = document.getElementById("rango");
 
-			var calculo = edad.value - 30; //Por que en default está en 30
+			var calculo = edad.value - 30;
 			if(calculo < 30){
 				calculo = 0;
 				edad.value = 30;
@@ -52,24 +56,24 @@
 			salida.innerHTML = calculo + " a " + edad.value;
 		}
 
-		//parametro
 		function validar(e){
-			//Almacenando un error de la funcion valid
-			//La propiedad target nos dice cual es el objeto que ha ocacionado el error.
 			var elemento = e.target;
 
-			//Coloreando fondo rojo
 			elemento.style.background="#FFDDDD";
-
 		}
 
-		//Creando la funcion para enviar lo datos
 		function enviar(){
-			var correcto = document.datos_usuario.checkValidity(); //Este metodo regresa true si la validacion ha sido correcta o false por el contrario
+			//Detectar textbox usuario
+			var cuadro_usuario = document.getElementById("miUsuario");
 
-			if(correcto == true){
-				//Enviar el formulario.
+			var correcto = document.datos_usuario.checkValidity();
+
+			if(correcto == true) {
 				document.datos_usuario.submit();
+			} else if(cuadro_usuario.validity.valueMissing == true) {
+				alert("El usuario no puede estar vacio");
+			} else if(cuadro_usuario.validity.patternMismatch == true) {
+				alert("El formato del campo debe ser 3 letras");
 			}
 		}
 
@@ -83,7 +87,6 @@
 			}
 		} 
 
-		//Cargar al comenzar la página
 		window.addEventListener("load",comenzar,false);
 	</script>
 </head>
@@ -94,7 +97,6 @@
 				<tr>
 					<td>Usuario:</td>
 					<td>
-						<!--Se pueden introducir mayusculas y minsculas, obligaatorios 3 caracteres -->
 						<input pattern="[A-Za-z]{3}" name="miUsuario" id="miUsuario" maxlenght="5" required>
 					</td>
 				</tr>
@@ -111,9 +113,7 @@
 					</td>
 				</tr>
 				<tr>
-					<!-- Texto que podrá ser modificado dinamicamente -->
 					<td>
-						<!-- Servira para un binding -->
 						<output id="rango" name="rango" >0 a 30 </output>
 					</td>
 				</tr>

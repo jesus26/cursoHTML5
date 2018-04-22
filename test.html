@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>validity.typeMismatch</title>
+</head>
+
+<body>
+<form name="frmRegister" id="frmRegister">
+<label>Email Address:<br><input name="txtemail" id="txtemail" required="required" type="email"></label>
+<input type="submit" value="Register..">
+</form>
+<script type="text/javascript">
+function validEmail(evt){
+var el=evt.target;
+if(el.validity){
+// html5 aware browsers
+if(el.validity.typeMismatch){
+el.setCustomValidity('Please enter a valid email address.');
+}else{
+el.setCustomValidity("");
+}
+}else{
+// legacy validation
+
+}
+}
+document.getElementById('txtemail').addEventListener('blur',validEmail,false);
+</script>
+
+
+</body></html>
