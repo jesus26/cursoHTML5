@@ -9,8 +9,8 @@ body{
 }
 
 /*Selector de clase*/
-.resaltar{
-
+.tercerElemento{
+	background-color: #e95906;
 }
 
 #navegacion{
@@ -35,4 +35,16 @@ body{
 
 #pieprincipal{
 	background-color: #FF0;
+}
+
+#reservedrights{
+	background-color: #F00;
+}
+
+address{
+	background-color: chartreuse;
+}
+
+figcaption{
+	background-color: chocolate;
 }
