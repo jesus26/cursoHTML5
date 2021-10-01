@@ -7,53 +7,54 @@
 	<link rel="shortcut icon" type="image/x-icon" href="imagenes/logo.ico" />
 	
 	<style>
-		/*Selector para elementos con determinado nombre, puede aplicar con otras etiquetas*/
+		/*Selector para elementos con determinado atributo name, puede aplicar con otras etiquetas*/
 		/*p[name = "miselementos"]{
-			color: #F3CD10; Amarillo
+			color: #F3CD10;
 		}*/
 
-		/*name^="m" significa que se aplica a los elementos que inician con m.*/
+		/*name^="m" significa que se aplica a los elementos cuyo atributo name inician con m.*/
 		/*p[name ^= "m"]{
-			color: #33FFF9; Azul
+			color: #33FFF9;
 		}*/
 
-		/*name$="m" significa que se aplica a los elementos que terminen con m*/
+		/*name$="m" significa que se aplica a los elementos cuyo atributo name terminen con m*/
 		/*p[name $= "m"]{
-			color: #74DF00; Verde
+			color: #74DF00;
 		}*/
 
-		/*name*="ele" significa que se aplica a los elementos que contengan ele en cualquier punto*/
+		/*name*="ele" significa que se aplica a los elementos cuyo atributo name contenga ele en cualquier punto*/
 		/*p[name*="ele"]{
-			color: #F00; rojo
+			color: #F00;
 		}*/
 		
 		/*PSEUDOCLASE*/
-		/*Aplicar color a la etiqueta p que es número hijo del parametro p:nth-child(2), aplica al segundo hijo*/
+		/*Aplicar color a la etiqueta <p> que es el x número de hijo de cada bloque: nth-child(2), aplica al segundo hijo*/
 		/*p:nth-child(2){
-			color: #037203; verde
+			color: #ce0a0a;
 		}*/
 
-		/*Aplicar color a los p impares de cada contenedor p:nth-child(odd)*/
+		/*Aplicar color a los <p> impares de cada contenedor p:nth-child(odd)*/
 		/*p:nth-child(odd){
-			color: #FF66B2; rosa
+			color: #FF66B2;
 		}*/
 
-		/*Aplicar color a los p pares de cada contenedor p:nth-child(even)*/
+		/*Aplicar color a los <p> pares de cada contenedor p:nth-child(even)*/
 		/*p:nth-child(even){
-			color:#F80000; rojo
+			color:#F80000;
 		}*/
 
-		/*Pone estilo a los p que son primer hijo del contenedor p:first-child*/
+		/*Pone estilo a los <p> que son primer hijo del contenedor p:first-child*/
 		/*p:first-child{
-			color: #3D0CDE; morado
+			color: #3D0CDE;
 		}*/
 
-		/*Pone estilo a los p que son el último hijo del contenedor p:last-child, no debe haber otra etiqueta después*/
+		/*Pone estilo a los p que son el último hijo del contenedor p:last-child.
+		NOTA: No debe haber ninguna otra etiqueta después aunque sea diferente*/
 		/*p:last-child{
-			color: #FFF000; amarillo
+			color: #FFF000;
 		}*/
 
-		/*Aplica a un elemento p que sea unico hijo p:only-child*/
+		/*Aplica a un elemento <p> que sea unico hijo p:only-child*/
 		/*p:only-child{
 			color: #F00;
 		}*/
@@ -61,7 +62,7 @@
 		#principal{
 			width: 500px;
 			background-color: #00F;
-			text-align: center; /*Centra texto dentro del elemento*/
+			text-align: center; /*Centra el texto dentro del elemento*/
 			margin: 15px auto; /*Centrar elemento, 15 px por arriba y abajo, auto por ambos lados para centrar*/
 			padding: 20px 30px; /*Separación entre contenido y borde del contenedor*/
 			border: 3px solid #F00;
@@ -78,15 +79,24 @@
 	</style>
 </head>
 <body>
-	<!--
-	<p name="miselementos">Hola</p>
+	<!-- <p name="miselementos">Hola</p>
 	<p>Jesús</p>
 	<p name="miselementosm">Junio</p>
 
+	<div>
+		<p >Bye</p>
+		<p>Ernesto</p>
+		<p>Septiembre</p>
+	</div>
+	<div>
+		<p >Diciembre</p>
+	</div>
 	<ul>
 		<li>Frutas</li>
 		<li>
 			<p>Mango</p>
+			<p>Fresa</p>
+			<p>Banana</p>
 		</li>
 		<li>Uvas</li>
 		<li>Mangos</li>
@@ -94,7 +104,6 @@
 
 	<p>Hasta luego</p>
 	-->
-
 	<header id="principal">
 		<span id="titulo"><!-- No agrega nada, solo para agregarle un estilo en particular-->Estilos CSS3</span>
 	</header>

@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <head>
 	<title>06 - Introduccion a CSS</title>
-		<!-- La etiqueta link sirve para vincular una hoja de estilo -->
+		<!-- La etiqueta <link> sirve para vincular una hoja de estilo -->
 		<link rel="stylesheet" type="text/css" href="_06_mis_estilos.css" />
 
 		<link rel="shortcut icon" type="image/x-icon" href="imagenes/logo.ico" />
@@ -11,16 +11,16 @@
 <body>
 	<!-- 
 		¿Dónde se coloca el código css?
-		- En archivo independiente, se puede modificar y afectar a todas las páginas que vinculen esa hoja de estilo
-		- Cabecera del documento (dentro del head), se modifica la apariencia de solo esa página
-		- In line, se coloca dentro de una etiqueta, solo afecta a la etiqueta y su interior, esto está desaconsejado (o etiquetas muy concretas).
+		- Opción 1: En un archivo independiente, se puede modificar y afectar a todas las páginas que vinculen esa hoja de estilo
+		- Opción 2: EN la cabecera del documento (dentro del head), se modifica la apariencia solo de la página que contiene el código
+		- Opción 3: In line, se coloca dentro de una etiqueta, solo afecta a la etiqueta y su interior, esto está desaconsejado (o etiquetas muy concretas).
 
 		Modelo caja-contenedor
 		Dos tipos de etiquetas en HTML en cuanto a su estructura
 		- block, generan un salto de página por arriba y abajo de la etiqueta, ocupan el 100% de ancho de la pantalla.
 		- inline, no generan salto de linea
 
-		la moyoría de etiquetas son block
+		la mayoría de etiquetas son tipo block
 
 		Los navegadores ya dan un css por defecto pero este puede ser diferente entre navegadores.
 	-->
@@ -43,7 +43,7 @@
 		<blockquote>
 			Segundo elemento
 		</blockquote>
-		<blockquote>
+		<blockquote class="tercerElemento">
 			Tercer elemento
 		</blockquote>
 	</aside>
@@ -114,7 +114,7 @@
 			Jesus Ernesto Pérez Becerra
 			<address>Tel: 321456721</address>
 			
-			<small>
+			<small id="reservedrights">
 				Todos los derechos reservados
 			</small>
 		</footer>

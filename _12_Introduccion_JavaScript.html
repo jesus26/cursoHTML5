@@ -6,15 +6,15 @@
 
 	<!-- 
 		JavaScript
-		Sirve para agregar dinamismo al la página
-		Hacer que la web responda a eventos que hace el usuario (como hacer clic, etc)
+		Sirve para agregar dinamismo a la página
+		Hacer que la web responda a eventos que hace el usuario (como hacer click, etc)
 
 		El código js se puede colocar en:
-		- in line, dentro de una etiqueta, poco recomendable
-		- entre etiqueta script que va normalmente en el head (puede ir en cualquier lugar pero se recomienda en el head)
-		- en un documento aparte que se linkea a una página web
+		- Opción 1: in line, dentro de una etiqueta, poco recomendable
+		- Opción 2: entre etiqueta script que va normalmente en el head (puede ir en cualquier lugar pero se recomienda en el head)
+		- Opción 3: en un documento aparte que se linkea a una página web
 
-		En js todas las sentencias terminan en ;
+		En js todas las sentencias terminan en punto y coma (;)
 	 -->
 
 	<link rel="shortcut icon" type="image/x-icon" href="imagenes/logo.ico" />
@@ -32,10 +32,10 @@
 </head>
 <body>
 	<!-- Script inline, dentro de una etiqueta, etiqueta block -->
-	<p onClick = "alert('Hola, Alerta inline');">Estudiando JavaScript de forma autodidacta</p> 
+	<p onclick="alert('Hola, Alerta inline');">Estudiando JavaScript de forma autodidacta mi pana</p> 
 
-	<!--LLamando función Saludo() de archivo externo con evento onClick-->
-	<p onClick="Saludo()";>Estudiando JavaScript de forma autodidacta</p>
+	<!--LLamando función Saludo() de archivo externo con evento onclic-->
+	<p onclick="Saludo();">Estudiando JavaScript de forma autodidacta</p>
 
 	<!-- LLamando función Saludo() de archivo externo con evento onmouseover -->
 	<p onmouseover="Saludo();">Estudiando JavaScript</p>
