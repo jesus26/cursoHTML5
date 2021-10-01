@@ -19,10 +19,12 @@
 
 		nav{
 			margin: 5px 0; /*Margen superior e inferior de 5 px e izq y der de 0*/
+			background-color: #F00;
 		}
 
 		#botones{
-			float: left; /*lo que aparezca a continuación (barra de progreso) rodeará al botón*/
+			float: left; /*indicamos que aparezca a la izqierda y lo que aparezca a continuación (barra de progreso) rodeará al
+			botón, esto especialmente porque son divs y los divs son tipo block, entonces necesitamos que la barra de progreso esté al mismo nivel*/
 			width: 100px;
 			height: 20px;
 		}
@@ -33,14 +35,14 @@
 			height: 16px;
 			border: 1px solid #666;
 			padding: 3px;
-			margin-left: 60px;
+			margin-left: 60px; /*es margin desde el contenedor ya que el elemento a la izquierda (botón) es float y no se considera */
 		}
 
 		#progreso{
-			position: absolute; /*Para que lo deje a la izquiera*/
+			position: absolute; /*Para que lo deje a la izquiera del contenedor*/
 			width: 0px; /*cero porque así empieza*/
 			height: 16px;
-			background: rgba(0,0,150,7);
+			background: rgba(0,0,150,7); /*rgba pertenece a CCS3*/
 		}
 
 	</style>
@@ -50,23 +52,23 @@
 </head>
 <body>
 	<section id="video">
-		<!-- Para poder modificar los controles es necesario quitar el atributo controls ya que si lo dejamos lo duplicaria, los default mas los nuestros 
-	poster="imagenes/vocho1.jpg"-->
+		<!-- Para poder modificar los controles es necesario quitar el atributo controls ya que si lo dejamos lo
+			duplicaria, los default mas los nuestros 
+			poster="imagenes/vocho1.jpg" -->
 		<video id="miVideo"  width="400">
-			<!-- Para agregar el video en diferentes formatos-->
+			<!-- Para agregar el video en diferentes formatos -->
 			<source src="videos/mi.mp4">
-			<source src="otro formato">
 		</video>
 
-		<!-- Agregar los controles un poco más abajo-->
+		<!-- Contenedor para agregar los controles un poco más abajo -->
 		<nav>
-			<!-- Especificar controles de navegación de un video-->
+			<!-- Especificar controles de navegación de un video -->
+			<!-- Contenedor de botones-->
 			<div id="botones">
-				<!-- Contenedor de botones-->
 				<button type="button" id="reproducir">Play</button>
 			</div>
+			<!-- Contenedor de barra (contendrá otra barra de progreso) -->
 			<div id="barra">
-				<!-- COntenedor de barra(contendrá otra barra de progreso) -->
 				<div id="progreso">
 					<!-- Representa la barra de progreso -->
 					

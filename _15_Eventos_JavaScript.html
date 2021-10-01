@@ -12,22 +12,21 @@
 		Usuario (hacer click, pasar mouse sobre un elemento, etc)
 		Sistema (por ejemplo al cargar la ventana (window.onload))
 
-		Manejador de evento: código que procesa el evento
+		Manejador de evento: código que procesa el evento, es decir que se debe hacer cuando el usuario realice alguna acción como dar click
 
 		Formas de construir un evento en js
 		- Eventos en linea (valido solo para una etiqueta)
-		- Eventos con propiedades (valido para todas las hojas con link a la pajina de js)
-		- addEventListener(), nuevo en html5, más recomendado, permite establecer varios manejadores de eventos en un mismo objeto
+		- Eventos con propiedades dentro de un archivo js o dentro de la sección head (valido para todas las hojas con link al archivo js),
+			se refiere a encontrar un elemento con getElebentsByTagName por ejemplo y asignarle un evento
+		- Método addEventListener(), nuevo en html5, más recomendado, permite establecer varios eventos en un mismo objeto
 			recibe 3 argumentos:
-				- nombre del evento
-				- función a ejecutar
-				- valor booleano (gestionar elementos anidados)
+				- nombre del evento (onclick, mouseover, mouseout, etc)
+				- función a ejecutar (la función que programemos)
+				- valor booleano (gestionar en caso de que haya elementos anidados, para indicar cual ejecuta primero y cual después)
 		*/
 
-		//var imagen;
-
-		//Cambiar imagen a un array para guardar todas las imagenes.
-		var imagen; //= new Array(2);
+		//Variable global para utilizarse en cualquier parte del script
+		var imagen;
 
 		//Declarando una funcion.
 		function tipoAuto(){
@@ -35,23 +34,21 @@
 		}
 
 		//funcion como manejador
-		function ManejaAuto(){
-			//Seleccionando determinado elemento para desatar un evento
+		function manejaAuto(){
+			//Seleccionando determinado elemento para desatar un evento (en este caso la primer imágen) (para evento con propiedad)
 			//document.getElementsByTagName("img")[0].onclick = tipoAuto;
 
-			//Obteniendo valores en un array
-			//La variable se cambio a global para poder utilizarla en otras funciones.
+			//Regresa todos los elementos que encuentra en un array por eso se le indica el indice
 			imagen = document.getElementsByTagName("img")[0];
 
-			//Indicando evento, el onClick se utiliza solo cuando va en linea. aquí se le quita el on.
-			//El metodo addEventListener tiene las siguientes propiedades. tipoEvento, nombreEvento y caso para cuando esta anidado
-			imagen.addEventListener("click",tipoAuto,false);
+			//Una ventaja de event listener es que un elemento puede desencadenar varios eventos como se ven en el sisguiente ejemplo:
+			//Indicando evento, el onclick se utiliza solo cuando va en linea. aquí se le quita el on.
+			//El metodo addEventListener tiene las siguientes propiedades. tipoEvento, nombreFunción y caso para cuando esta anidado
+			imagen.addEventListener("click", tipoAuto, false);
 
-			//Agregando más eventos a un solo objeto (imagen en este caso)
-			imagen.addEventListener("mouseover",crecer,false);
-			imagen.addEventListener("mouseout",disminuir,false);
-
-			//una ventaja de una event listener es que un elemento puede desencadenar varios elemento como se ven en el sisguiente ejemplo:
+			//Agregando más eventos al mismo objeto (imágen[0] en este caso)
+			imagen.addEventListener("mouseover", crecer, false);
+			imagen.addEventListener("mouseout", disminuir, false);
 		}
 
 		//Funcion para crecer la imagen
@@ -67,20 +64,19 @@
 		}
 
 		//Cargar código al cargar la página
-		window.onload = ManejaAuto;
-
+		window.onload = manejaAuto;
 
 	</script>
 </head>
 <body>
 	<!-- 
-	Imagen desatando evento onClick en linea, no se recomienda 
-	<p><img src = "imagenes/vocho1.jpg" onClick = "tipoAuto()"></p>
+	Imágen desatando evento onclick en linea, no se recomienda
+	<p><img src="imagenes/vocho1.jpg" onmouseover="tipoAuto()"></p>
 	-->
 
-	<!-- Imagen desatando evento cargado en una función -->
+	<!-- Imagen desatando evento como propiedad (cargado en una función) -->
 	<p><img src = "imagenes/vocho1.jpg" width="250" height="200"></p>
 
-	<!-- <p><img src="imagenes/vocho1.jpg">&nbsp;&nbsp;<img src="imagenes/vocho2.jpg">&nbsp;&nbsp;<img src="imagenes/vocho3.jpg"></p> -->
+	<p><img src="imagenes/vocho1.jpg">&nbsp;&nbsp;<img src="imagenes/vocho2.jpg">&nbsp;&nbsp;<img src="imagenes/vocho3.jpg"></p>
 </body>
 </html>

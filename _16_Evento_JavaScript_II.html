@@ -1,93 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>16 - Eventos en JavaScript II</title>
 	<script type="text/javascript">
 
+		//Creando array de 3 imágenes
 		var imagen = new Array(3);
 
-		function tipoAuto(){
+		function tipoAuto() {
 			alert("Eventos en JavaScript");
 		}
 
-		function ManejaAuto(){
-			//Guardndo la imagen de la posición 0
-			//imagen = document.getElementsByTagName("img")[0];
-
-			/*imagen.addEventListener("click",tipoAuto,false);
-			imagen.addEventListener("mouseover",crecer,false);
-			imagen.addEventListener("mouseout",disminuir,false);*/
-
-			/*Meter la llamada a imagen a un bucle for para reconocer todas las imagenes*/
-			for(var i = 0; i < 4; i++){
+		function manejaAuto() {
+			/*Meter la llamada a imágen a un bucle for para guardar 4 imagenes en un array*/
+			for (var i = 0; i < 4; i++) {
 				imagen[i] = document.getElementsByTagName("img")[i];
 			}
 
 			/*
-			característica del addEveentListener, el nombre del método se puede sustituir con una finción anónima
+			característica del addEveentListener, el nombre del método se puede sustituir con una función anónima
 
 			Función anonima: funciones sin nombre para ahorrar código
 			*/
-			imagen[0].addEventListener("mouseover",function(){imagen[0].width = 270; imagen[0].height = 220},false);
-			imagen[0].addEventListener("mouseout", function(){imagen[0].width = 250; imagen[0].height = 200},false);
-			imagen[0].addEventListener("click",tipoAuto,false);
+			//Agregando 3 eventos a imágen 0, se muestra como se usan las funciones anónimas
+			imagen[0].addEventListener("mouseover",
+			function () { 
+				imagen[0].width = 270; imagen[0].height = 220 
+			}, false);
+			imagen[0].addEventListener("mouseout", function () { imagen[0].width = 250; imagen[0].height = 200 }, false);
+			imagen[0].addEventListener("click", tipoAuto, false);
 
-			//Se necesita repetir ya que con un bucle solo funcionarií el último elemento
-			imagen[1].addEventListener("mouseover",function(){imagen[1].width = 270; imagen[1].height = 220},false);
-			imagen[1].addEventListener("mouseout", function(){imagen[1].width = 250; imagen[1].height = 200},false);
-			imagen[1].addEventListener("click",tipoAuto,false);
+			//Se necesita repetir ya que con un bucle solo funcionaría el último elemento
+			imagen[1].addEventListener("mouseover", function () { imagen[1].width = 270; imagen[1].height = 220 }, false);
+			imagen[1].addEventListener("mouseout", function () { imagen[1].width = 250; imagen[1].height = 200 }, false);
+			imagen[1].addEventListener("click", tipoAuto, false);
 
-			imagen[2].addEventListener("mouseover",function(){imagen[2].width = 270; imagen[2].height = 220},false);
-			imagen[2].addEventListener("mouseout", function(){imagen[2].width = 250; imagen[2].height = 200},false);
-			imagen[2].addEventListener("click",tipoAuto,false);
+			imagen[2].addEventListener("mouseover", function () { imagen[2].width = 270; imagen[2].height = 220 }, false);
+			imagen[2].addEventListener("mouseout", function () { imagen[2].width = 250; imagen[2].height = 200 }, false);
+			imagen[2].addEventListener("click", tipoAuto, false);
 
-			imagen[2].addEventListener("mouseover",function(){imagen[3].width = 270; imagen[3].height = 220},false);
-			imagen[3].addEventListener("mouseout", function(){imagen[3].width = 250; imagen[3].height = 200},false);
-			imagen[3].addEventListener("click",tipoAuto,false);
-
+			imagen[3].addEventListener("mouseover", function () { imagen[3].width = 270; imagen[3].height = 220 }, false);
+			imagen[3].addEventListener("mouseout", function () { imagen[3].width = 250; imagen[3].height = 200 }, false);
+			imagen[3].addEventListener("click", tipoAuto, false);
 		}
 
-		function crecer(){
-			imagen.width = 270;
-			imagen.height = 220;
-		}
+		window.onload = manejaAuto;
 
-		function disminuir(){
-			imagen.width = 250;
-			imagen.height = 200;
-		}
-
-		window.onload = ManejaAuto;
-
-		
-		function losEventos(){
+		//Usada para explicar el tercer parámetro de addEventListener
+		function losEventos() {
 			//detectando elementos
 			var elemento = document.getElementsByTagName("p")[0];
 			var elemento2 = document.getElementsByTagName("img")[4];
 
-			//Invertir el orden de las alertas(eventos), el que tiene el true será el evento que se dispare primero
-			elemento.addEventListener("click", aviso2, true);
+			//El evento que tiene el true será el evento que se dispare primero
 			elemento2.addEventListener("click", aviso1, false);
+			elemento.addEventListener("click", aviso2, true);
 		}
 
-		function aviso1(){
+		function aviso1() {
 			alert("Hola soy la imagen");
 		}
 
-		function aviso2(){
+		function aviso2() {
 			alert("Hola soy el parrafo");
 		}
 
+		//Cargar función losEventos
 		window.addEventListener("load", losEventos, false);
-		
+
 	</script>
 </head>
+
 <body>
-	<img src = "imagenes/vocho1.jpg" width="250" height="200">
-	<img src = "imagenes/vocho1.jpg" width="250" height="200">
-	<img src = "imagenes/vocho1.jpg" width="250" height="200">
-	<img src = "imagenes/vocho1.jpg" width="250" height="200">
-	<p><img src = "imagenes/vocho1.jpg" width="250" height="200"></p>
+	<img src="imagenes/vocho1.jpg" width="250" height="200">
+	<img src="imagenes/vocho1.jpg" width="250" height="200">
+	<img src="imagenes/vocho1.jpg" width="250" height="200">
+	<img src="imagenes/vocho1.jpg" width="250" height="200">
+
+	<!-- Usada para explicar el tercer parámetro de addEventListener -->
+	<p>
+		<img src="imagenes/vocho1.jpg" width="250" height="200">
+	</p>
 </body>
+
 </html>
